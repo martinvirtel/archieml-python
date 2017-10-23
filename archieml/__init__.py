@@ -1,5 +1,11 @@
 import re
-from collections import OrderedDict
+try :
+    import ruamel.yaml
+    from ruamel.yaml.compat import ordereddict as OrderedDict
+except ImportError:
+    from collections import OrderedDict
+
+
 try:
     from StringIO import StringIO
 except ImportError:
